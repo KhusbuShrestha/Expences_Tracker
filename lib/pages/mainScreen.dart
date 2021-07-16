@@ -1,7 +1,4 @@
-import 'package:expenses_tracker/pages/chart.dart';
 import 'package:expenses_tracker/pages/home.dart';
-import 'package:expenses_tracker/pages/pdf.dart';
-import 'package:expenses_tracker/pages/transaction.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
