@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({ Key? key }) : super(key: key);
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -11,7 +11,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Stack(clipBehavior: Clip.none, children: [
+      body: Stack(clipBehavior: Clip.none, children: [
         Positioned(
           child: Container(
             height: 350,
@@ -24,17 +24,20 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Container(
             height: 150,
             width: 150,
-            child: Image(image: AssetImage("images/splash.png")),
             decoration: BoxDecoration(
+              shape: BoxShape.circle,
               color: Colors.white,
-              borderRadius: BorderRadius.circular(100),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("images/splash.png"),
+              ),
             ),
           ),
         ),
         Positioned(
           top: 300,
           child: Container(
-            height: 282,
+            height: 319,
             width: MediaQuery.of(context).size.width - 40,
             margin: EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
@@ -59,7 +62,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email),
+                      prefixIcon: Icon(Icons.email, color: Colors.black,),
                       hintText: "Email",
                     ),
                     keyboardType: TextInputType.emailAddress,
@@ -69,7 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.phone),
+                      prefixIcon: Icon(Icons.phone, color: Colors.black,),
                       hintText: "Phone",
                     ),
                     keyboardType: TextInputType.number,
@@ -79,14 +82,13 @@ class _RegisterPageState extends State<RegisterPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                      prefixIcon: Icon(Icons.lock, color: Colors.black,),
+                      suffixIcon: Icon(Icons.remove_red_eye_outlined, color: Colors.black,),
                       hintText: "Password",
                     ),
                     obscureText: true,
                   ),
                 ),
-                
               ],
             ),
           ),
@@ -100,7 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
         //   ),
         // ),
         Positioned(
-          top: 556,
+          top: 590,
           left: 84,
           child: SizedBox(
             width: 222,
@@ -121,11 +123,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
           ),
         ),
-
-        
       ]),
-
-      
     );
   }
 }

@@ -24,10 +24,13 @@ class _LogInPageState extends State<LogInPage> {
           child: Container(
             height: 150,
             width: 150,
-            child: Image(image: AssetImage("images/splash.png")),
             decoration: BoxDecoration(
+              shape: BoxShape.circle,
               color: Colors.white,
-              borderRadius: BorderRadius.circular(100),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage("images/splash.png"),
+              ),
             ),
           ),
         ),
@@ -49,6 +52,9 @@ class _LogInPageState extends State<LogInPage> {
                 ]),
             child: Column(
               children: [
+                SizedBox(
+                  height: 5,
+                ),
                 Text(
                   "LogIn",
                   style: TextStyle(
@@ -59,24 +65,27 @@ class _LogInPageState extends State<LogInPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email),
+                      prefixIcon: Icon(Icons.email, color: Colors.black,),
                       hintText: "Email",
                     ),
                     keyboardType: TextInputType.emailAddress,
                   ),
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                      prefixIcon: Icon(Icons.lock, color: Colors.black,),
+                      suffixIcon: Icon(Icons.remove_red_eye_outlined, color: Colors.black,),
                       hintText: "Password",
                     ),
                     obscureText: true,
                   ),
                 ),
-                Text("FORGOT PASSWORD?"),
+                Text("FORGOT PASSWORD?", style: TextStyle(fontSize: 12),),
               ],
             ),
           ),
@@ -102,7 +111,9 @@ class _LogInPageState extends State<LogInPage> {
                   backgroundColor: MaterialStateProperty.all<Color>(
                       Color.fromRGBO(95, 147, 154, 1)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '');
+                },
                 child: Text(
                   "LOGIN",
                   style: TextStyle(fontSize: 24, fontFamily: "Roboto"),
@@ -117,7 +128,7 @@ class _LogInPageState extends State<LogInPage> {
           left: 84,
           child: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '');
+              Navigator.pushNamed(context, 'register');
             },
             child: RichText(
               text: TextSpan(
@@ -128,7 +139,7 @@ class _LogInPageState extends State<LogInPage> {
                   ),
                   TextSpan(
                     text: 'Register here',
-                    style: TextStyle(color: Colors.red, fontSize: 14),
+                    style: TextStyle(color: Color.fromRGBO(95, 147, 154, 1), fontSize: 14),
                   ),
                 ],
               ),

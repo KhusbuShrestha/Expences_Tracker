@@ -1,3 +1,5 @@
+import 'package:expenses_tracker/pages/logIn.dart';
+import 'package:expenses_tracker/pages/notification.dart';
 import 'package:expenses_tracker/pages/register.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -23,7 +26,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: RegisterPage(),
+      routes: {
+        "/" : (context) => NotificationPage(),
+        "register": (context) => RegisterPage(),
+        "login": (context) => LogInPage(),
+
+      },
     );
   }
 }
