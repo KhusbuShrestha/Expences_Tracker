@@ -29,11 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        "/": (context) => TransactionTabbar(),
-        "register": (context) => RegisterPage(),
-        "login": (context) => LogInPage(),
-      },
+      home: LogInPage(),
     );
   }
 }
