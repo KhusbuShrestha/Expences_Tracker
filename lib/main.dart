@@ -1,6 +1,8 @@
 import 'package:expenses_tracker/pages/logIn.dart';
 import 'package:expenses_tracker/pages/notification.dart';
 import 'package:expenses_tracker/pages/register.dart';
+import 'package:expenses_tracker/screens/TabIncomeExpense.dart';
+import 'package:expenses_tracker/screens/addIncome.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,10 +29,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        "/" : (context) => NotificationPage(),
+        "/": (context) => NotificationPage(),
         "register": (context) => RegisterPage(),
         "login": (context) => LogInPage(),
-
       },
     );
   }
